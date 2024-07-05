@@ -1,0 +1,114 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+</head>
+<style>
+    .form {
+	max-width: 500px;
+	margin: 20px auto;
+	padding: 20px;
+	background-color: #f9f9f9;
+	border: 1px solid #ccc;
+	box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+[class="label"]{
+	display: block;
+	margin-bottom: 10px;
+}
+
+[type^=" "] {
+	width: 100%;
+	padding: 10px;
+	margin-bottom: 20px;
+	border: 1px solid #ccc;
+}
+input[type="_email"]{
+	width: 100%;
+	padding: 10px;
+	margin-bottom: 20px;
+	border: 1px solid #ccc;
+}
+input[type~="tel"]{
+	width: 100%;
+	padding: 10px;
+	margin-bottom: 20px;
+	border: 1px solid #ccc;
+}
+input[type|="password"]{
+	width: 100%;
+	padding: 10px;
+	margin-bottom: 20px;
+	border: 1px solid #ccc;
+}
+input[type$="le"] {
+	padding: 10px;
+	margin-bottom: 20px;
+}
+
+input[type*="check"], input[type="radio"] {
+	margin-bottom: 20px;
+}
+
+select {
+	width: 100%;
+	padding: 10px;
+	margin-bottom: 20px;
+	border: 1px solid #ccc;
+}
+
+.submit {
+	background-color: #4CAF50;
+	color: #fff;
+	padding: 10px 20px;
+	border: none;
+	border-radius: 5px;
+	cursor: pointer;
+}
+
+.submit:hover {
+	background-color: #3e8e41;
+}
+</style>
+<body>
+    
+
+
+<form id="myForm" class="form" action="/submit" method="post" enctype="multipart/form-data">
+	<label for="name" class="label" aria-label="Enter your name" data-tooltip="Please enter your full name">Name:</label>
+	<input type=" text" id="name" name="name" required placeholder="Enter your name" autofocus maxlength="50" minlength="2" pattern="[A-Za-z ]{2,50}" title="Name must be between 2-50 characters">
+
+	<label for="email" class="label" aria-label="Enter your email" data-tooltip="Please enter a valid email address">Email:</label>
+	<input type="_email" id="email" name="email" required placeholder="Enter your email" pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}" title="Invalid email address">
+
+	<label for="phone" class="label" aria-label="Enter your phone number" data-tooltip="Please enter a valid phone number">Phone:</label>
+	<input type="tel" id="phone" name="phone" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" placeholder="Enter your phone number" title="Invalid phone number">
+
+	<label for="password" class="label" aria-label="Enter your password" data-tooltip="Please enter a strong password">Password:</label>
+	<input type="password-here" id="password" name="password" required placeholder="Enter your password" pattern=".{8,}" title="Password must be at least 8 characters long">
+
+	<label for="file" class="label" aria-label="Upload a file" data-tooltip="Please select a file to upload">File:</label>
+	<input type="file" id="file" name="file" accept=".pdf, .docx" required>
+
+	<label for="checkbox" class="label" aria-label="Check the box" data-tooltip="Please check the box">Checkbox:</label>
+	<input type="checkbox" id="checkbox" name="checkbox" required>
+
+	<label for="radio" class="label" aria-label="Select an option" data-tooltip="Please select an option">Radio:</label>
+	<input type="radio" id="radio" name="radio" required>
+
+	<label for="select" class="label" aria-label="Select an option" data-tooltip="Please select an option">Select:</label>
+	<select id="select" name="select" required>
+		<option value="option1">Option 1</option>
+		<option value="option2">Option 2</option>
+	</select>
+
+	<input type="submit" value="Submit" class="submit">
+</form>
+</body>
+</html>
